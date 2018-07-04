@@ -277,7 +277,7 @@ python train.py --epoch=50 --steps=250 --gpu=0 csv ./helmet_images_labeled/annot
 # 也可以使用models目录下的 resnet.py，mobilenet.py等来自定义网络
 ```
 训练过程输出如下。
-![](images\helmet.png)
+![](https://raw.githubusercontent.com/Iamnvincible/objectdetection/master/images/helmet.png)
 每一个epoch的模型保存在`snapshots`目录下。
 #### 测试
 选择一个满意的模型，使用下面的命令，将训练模型转换为可供测试的模型。
@@ -292,7 +292,7 @@ class_name=sorted(class_name)
 labels_to_names=dict(zip(range(len(class_name)),class_name)) 
 ```
 测试结果如下图。
-![](images/helmet2.png)
+![](https://raw.githubusercontent.com/Iamnvincible/objectdetection/master/images/helmet2.png)
 
 如果要在整个数据集上统计mAP使用如下命令，其中模型为经过转换的模型。
 ```
@@ -440,7 +440,7 @@ cat 2007_train.txt 2007_val.txt 2012_*.txt > train.txt
   ./darknet detector train cfg/voc.data cfg/yolov3-voc.cfg darknet53.conv.74 -gpus 0
 ```
 训练将会有类似如下的输出。
-![](images/yolo.png)
+![](https://raw.githubusercontent.com/Iamnvincible/objectdetection/master/images/yolo.png)
 训练过程中生成的模型在`backup`目录下。模型将会在每100次迭代后连续产生，1000次迭代后每10 000次迭代后保存一次。可根据需要在 `examples/detector.c` 的138行进行修改，修改后重新编译。请注意观察训练输出的误差，在误差满意后手动停止训练。
 
 输出数据含义
@@ -511,7 +511,7 @@ random=1
 ./darknet detector test cfg/voc.data cfg/yolov3-voc.cfg /backup/yolo-voc_final.weights img.jpg
 ```
 将会输出检测出的目标类别和置信度，同时在目录下产生predictions.png文件供查看。
-![](images\yolo2.png)
+![](https://raw.githubusercontent.com/Iamnvincible/objectdetection/master/images/yolo2.png)
 
 ### 模型验证
 
